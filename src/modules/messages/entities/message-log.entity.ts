@@ -39,11 +39,11 @@ export class MessageLog {
   direction: MessageDirection;
 
   @ApiProperty({ required: false })
-  @Column({ name: 'from_phone', length: 20, nullable: true })
+  @Column({ name: 'from_phone', type: 'varchar', length: 20, nullable: true })
   fromPhone: string | null;
 
   @ApiProperty({ required: false })
-  @Column({ name: 'to_phone', length: 20, nullable: true })
+  @Column({ name: 'to_phone', type: 'varchar', length: 20, nullable: true })
   toPhone: string | null;
 
   @ApiProperty({ enum: ['text', 'image', 'file', 'audio', 'video'] })
@@ -59,7 +59,7 @@ export class MessageLog {
   status: MessageStatus;
 
   @ApiProperty({ required: false })
-  @Column({ name: 'wa_message_id', length: 100, nullable: true })
+  @Column({ name: 'wa_message_id', type: 'varchar', length: 100, nullable: true })
   waMessageId: string | null;
 
   @ApiProperty({ required: false })

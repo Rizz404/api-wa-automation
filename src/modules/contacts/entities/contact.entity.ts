@@ -22,7 +22,7 @@ export class Contact {
   workspaceId: string;
 
   @ApiProperty({ required: false })
-  @Column({ length: 100, nullable: true })
+  @Column({ type: 'varchar', length: 100, nullable: true })
   name: string | null;
 
   @ApiProperty()

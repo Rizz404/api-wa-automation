@@ -29,7 +29,7 @@ export class Webhook {
   url: string;
 
   @Exclude()
-  @Column({ length: 255, nullable: true })
+  @Column({ type: 'varchar', length: 255, nullable: true })
   secret: string | null;
 
   @ApiProperty({ type: [String] })
