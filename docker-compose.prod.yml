@@ -14,8 +14,9 @@ services:
         condition: service_healthy
       redis:
         condition: service_healthy
+    # Publish only to loopback; Plesk reverse-proxies the domain to this port.
     ports:
-      - '3000:3000'
+      - '127.0.0.1:${API_PORT:-3000}:3000'
 
   postgres:
     image: postgres:16-alpine
